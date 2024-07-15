@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekmos</title>
+
+  <link rel="preload" href="fonts/Inter-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Inter-Medium.woff" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Inter-SemiBold.woff" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Inter-Bold.woff" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script defer src="js/swiper-bundle.min.js"></script>
+  <script defer src="js/script.js"></script>
+</head>
+<body id="scroll">
+  <header class="header">
+    <div class="header-up">
+      <div class="container header-up__container">
+        <div class="header-up__left-btn">
+          <button class="header-up__location" id="modal__btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.4375 14.2188C6.21875 12.6953 3.5 9.0625 3.5 7C3.5 4.51562 5.49219 2.5 8 2.5C10.4844 2.5 12.5 4.51562 12.5 7C12.5 9.0625 9.75781 12.6953 8.53906 14.2188C8.25781 14.5703 7.71875 14.5703 7.4375 14.2188ZM8 8.5C8.82031 8.5 9.5 7.84375 9.5 7C9.5 6.17969 8.82031 5.5 8 5.5C7.15625 5.5 6.5 6.17969 6.5 7C6.5 7.84375 7.15625 8.5 8 8.5Z" fill="white"/>
+            </svg>
+            Москва
+          </button>
+          <a href="for_pharmacies.html" class="header-up__connect">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 3.625C5 3.01562 5.49219 2.5 6.125 2.5H9.875C10.4844 2.5 11 3.01562 11 3.625V14.5H9.125V12.625C9.125 12.0156 8.60938 11.5 8 11.5C7.36719 11.5 6.875 12.0156 6.875 12.625V14.5H5V3.625ZM7.8125 4C7.60156 4 7.4375 4.1875 7.4375 4.375V4.9375H6.875C6.66406 4.9375 6.5 5.125 6.5 5.3125V5.6875C6.5 5.89844 6.66406 6.0625 6.875 6.0625H7.4375V6.625C7.4375 6.83594 7.60156 7 7.8125 7H8.1875C8.375 7 8.5625 6.83594 8.5625 6.625V6.0625H9.125C9.3125 6.0625 9.5 5.89844 9.5 5.6875V5.3125C9.5 5.125 9.3125 4.9375 9.125 4.9375H8.5625V4.375C8.5625 4.1875 8.375 4 8.1875 4H7.8125ZM4.25 4.75V14.5H1.625C0.992188 14.5 0.5 14.0078 0.5 13.375V10H2.375C2.5625 10 2.75 9.83594 2.75 9.625C2.75 9.4375 2.5625 9.25 2.375 9.25H0.5V7.75H2.375C2.5625 7.75 2.75 7.58594 2.75 7.375C2.75 7.1875 2.5625 7 2.375 7H0.5V5.875C0.5 5.26562 0.992188 4.75 1.625 4.75H4.25ZM14.375 4.75C14.9844 4.75 15.5 5.26562 15.5 5.875V7H13.625C13.4141 7 13.25 7.1875 13.25 7.375C13.25 7.58594 13.4141 7.75 13.625 7.75H15.5V9.25H13.625C13.4141 9.25 13.25 9.4375 13.25 9.625C13.25 9.83594 13.4141 10 13.625 10H15.5V13.375C15.5 14.0078 14.9844 14.5 14.375 14.5H11.75V4.75H14.375Z" fill="white"/>
+            </svg>
+            <span class="header-up__connect-text">Аптекам и партнерам</span>
+          </a>
+        </div>
+        <div class="modal" id="modal-connect">
+          <div class="modal-content">
+            <div class="modal-up">
+              <button class="modal__btn-close modal-connect__btn-close"></button>
+              <h2 class="modal-heading">Хотите разместить свою аптеку?</h2>
+            </div>
+            <div class="modal-main">
+              <p class="modal-main__descr">Для размещения в информационной справке на сайте www.lekmos.ru и в голосовой электронной справке, заполните форму и наши менеджеры с вами свяжутся.</p>
+              <form class="modal-form" action="#" autocomplete="off">
+                <div class="input-box">
+                  <label class="modal__label-form" for="name">Название аптеки (аптечной сети)</label>
+                  <input class="modal__input-form" id="name" type="text" aria-label="Введите название аптеки" name="name">
+                </div>
+                <div class="input-box">
+                  <label class="modal__label-form" for="email">E-mail</label>
+                  <input class="modal__input-form" id="email" type="email" aria-label="Введите email" name="email">
+                </div>
+                <div class="input-box">
+                  <label class="modal__label-form" for="phone">Телефон</label>
+                  <input class="modal__input-form" id="phone" type="text" aria-label="Введите телефон" name="phone">
+                </div>
+                <div class="input-box">
+                  <label class="modal__label-form" for="contact">Контактное лицо</label>
+                  <input class="modal__input-form" id="contact" type="text" aria-label="Введите имя" name="contact">
+                </div>
+                <div class="modal-main__bottom">
+                  <p class="modal-main__descr modal-main__descr-bottom">Либо свяжитесь с нами по адресам <a class="modal-link" href="mail:director@lekmos.ru">director@lekmos.ru </a><a class="modal-link" href="mail:admin@lekmos.ru">admin@lekmos.ru</a></p>
+                  <p class="modal-main__descr modal-main__descr-bottom">или телефонам: <a class="modal-main__descr" href="tel:+79262440164">+7&nbsp;(926)&nbsp;244-01-64, </a><a class="modal-main__descr" href="tel:+79859927773">+7&nbsp;(985)&nbsp;992-77-73, </a><a class="modal-main__descr" href="tel:+79258804108">+7&nbsp;(925)&nbsp;880-41-08 </a><a class="modal-main__descr" href="tel:+79911256701">+7&nbsp;(991)&nbsp;125-67-01</a></p>
+                </div>
+                <button class="modal-main__btn green-btn" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="modal-final">
+          <div class="modal-content modal-content__final">
+            <div class="modal-up">
+              <button class="modal__btn-close modal-final__btn-close"></button>
+              <h2 class="modal-heading">Данные отправлены</h2>
+            </div>
+            <div class="modal-main modal-main__final">
+              <p class="modal-final__descr">
+                <span class="modal-final__text">Благодарим за регистрацию!</span>
+                <span class="modal-final__text">Наши менеджеры свяжутся с вами в ближайшее время</span>
+              </p>
+              <button class="modal-final__btn green-btn">ОК</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="modal__city">
+          <div class="modal-content">
+            <button class="modal__btn-close" id="close-city-btn"></button>
+            <h2 class="modal-heading modal-heading__city">Выберите город</h2>
+            <div class="modal-cont">
+              <div class="modal-city">
+                <ul class="modal-city__top-list">
+                  <li class="modal-city__top-item"><a class="modal-city__top-link" href="#">Москва</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__top-link" href="#">Санкт-Петербург</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__top-link" href="#">Новосибирск</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__top-link" href="#">Самара</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__top-link" href="#">Казань</a></li>
+                </ul>
+                <form class="modal-city__form" action="#" autocomplete="off">
+                  <div class="input-box modal-city__input-box">
+                    <label class="modal-city__label" for="GET-name">Введите название города
+                    </label>
+                    <input class="modal-city__input" id="GET-name" type="text" aria-label="Введите город" placeholder="" name="name">
+                  </div>
+                  <button class="modal-city__form-btn" type="submit" aria-label="Начать поиск">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="#3F8B8B"/>
+                      <path d="M22.0009 21.9999L18.7832 18.7822" stroke="#3F8B8B"/>
+                    </svg>
+                  </button>
+                </form>
+                <ul class="modal-city__bottom-list">
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Брянск</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Брянск</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Брянск</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Брянск</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Дятьково</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Дятьково</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Дятьково</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Дятьково</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Клинцы</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Клинцы</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Клинцы</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Клинцы</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Новозыбков</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Новозыбков</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Новозыбков</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Новозыбков</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Унеча</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Унеча</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Унеча</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Унеча</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Бытошь</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Бытошь</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Бытошь</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Бытошь</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Выгоничи</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Выгоничи</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Выгоничи</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Выгоничи</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Глинищево</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Глинищево</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Глинищево</a></li>
+                  <li class="modal-city__top-item"><a class="modal-city__bottom-link" href="#">Глинищево</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav>
+          <ul class="header-up__list">
+            <li class="header-up__item"><a class="header-up__link" href="catalog.html">Лекарства</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="health.html">Болезни</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="pharmacies.html">Аптеки</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="article.html">Статьи</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="#">Форум</a></li>
+          </ul>
+        </nav>
+        <button class="header-burger" aria-label="Открыть или закрыть меню"></button>
+        <div class="header-mobile__burger-menu">
+          <nav class="header-mobile__burger-nav">
+            <ul class="header-mobile__list">
+              <li class="header-mobile__item"><a class="header-mobile__link" href="catalog.html">Лекарства</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="health.html">Болезни</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="pharmacies.html">Аптеки</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="article.html">Статьи</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="#">Форум</a></li>
+            </ul>
+          </nav>
+          <div class="header-mobile__bottom">
+            <span class="header-mobile__social-title">Связаться</span>
+            <ul class="header-mobile__social-list">
+              <li class="header-up__social-item">
+                <a class="section-hero__icon" href="tel:+78003331111" aria-label="Позвонить">
+                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.957 17.3789L20.9258 21.7188C20.7969 22.3633 20.2812 22.793 19.6367 22.793C8.80859 22.75 0 13.9414 0 3.11328C0 2.46875 0.386719 1.95312 1.03125 1.82422L5.37109 0.792969C5.97266 0.664062 6.61719 1.00781 6.875 1.56641L8.89453 6.25C9.10938 6.80859 8.98047 7.45312 8.50781 7.79688L6.1875 9.6875C7.64844 12.6523 10.0547 15.0586 13.0625 16.5195L14.9531 14.1992C15.2969 13.7695 15.9414 13.5977 16.5 13.8125L21.1836 15.832C21.7422 16.1328 22.0859 16.7773 21.957 17.3789Z" fill="#6951AB"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="header-up__social-item header-mobile__social-item">
+                <a class="header-up__icon" href="#" aria-label="Ссылка на чат в Телеграм">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 3C8.376 3 3 8.376 3 15C3 21.624 8.376 27 15 27C21.624 27 27 21.624 27 15C27 8.376 21.624 3 15 3ZM20.568 11.16C20.388 13.056 19.608 17.664 19.212 19.788C19.044 20.688 18.708 20.988 18.396 21.024C17.7 21.084 17.172 20.568 16.5 20.124C15.444 19.428 14.844 18.996 13.824 18.324C12.636 17.544 13.404 17.112 14.088 16.416C14.268 16.236 17.34 13.44 17.4 13.188C17.4083 13.1498 17.4072 13.1102 17.3968 13.0726C17.3863 13.0349 17.3668 13.0004 17.34 12.972C17.268 12.912 17.172 12.936 17.088 12.948C16.98 12.972 15.3 14.088 12.024 16.296C11.544 16.62 11.112 16.788 10.728 16.776C10.296 16.764 9.48 16.536 8.868 16.332C8.112 16.092 7.524 15.96 7.572 15.54C7.596 15.324 7.896 15.108 8.46 14.88C11.964 13.356 14.292 12.348 15.456 11.868C18.792 10.476 19.476 10.236 19.932 10.236C20.028 10.236 20.256 10.26 20.4 10.38C20.52 10.476 20.556 10.608 20.568 10.704C20.556 10.776 20.58 10.992 20.568 11.16Z" fill="#6951AB"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="header-up__social-item header-mobile__social-item">
+                <a class="header-up__icon" href="#" aria-label="Ссылка на чат What's app">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5012 2.25C19.7146 2.25 24.7512 7.28663 24.7512 13.5C24.7512 19.7134 19.7146 24.75 13.5012 24.75C11.5131 24.7532 9.55998 24.2271 7.84249 23.2256L2.25574 24.75L3.77674 19.161C2.77447 17.443 2.24792 15.489 2.25124 13.5C2.25124 7.28663 7.28786 2.25 13.5012 2.25ZM9.66724 8.2125L9.44224 8.2215C9.29657 8.23037 9.15421 8.26864 9.02374 8.334C8.9017 8.40311 8.7903 8.4895 8.69299 8.5905C8.55799 8.71763 8.48149 8.82788 8.39936 8.93475C7.98325 9.47577 7.75921 10.14 7.76261 10.8225C7.76486 11.3737 7.90886 11.9104 8.13386 12.4121C8.59399 13.4269 9.35111 14.5012 10.3501 15.4969C10.5909 15.7365 10.8271 15.9773 11.0814 16.2011C12.3227 17.294 13.8019 18.0822 15.4014 18.5029L16.0404 18.6007C16.2485 18.612 16.4566 18.5963 16.6659 18.5861C16.9935 18.5692 17.3134 18.4805 17.603 18.3263C17.7503 18.2504 17.8941 18.1678 18.0339 18.0787C18.0339 18.0787 18.0822 18.0472 18.1745 17.9775C18.3264 17.865 18.4197 17.7851 18.5457 17.6535C18.6391 17.5568 18.7201 17.4431 18.782 17.3138C18.8697 17.1304 18.9575 16.7805 18.9935 16.4891C19.0205 16.2664 19.0126 16.1449 19.0092 16.0695C19.0047 15.9491 18.9046 15.8243 18.7955 15.7714L18.1407 15.4778C18.1407 15.4778 17.162 15.0514 16.5635 14.7791C16.5009 14.7518 16.4338 14.7361 16.3655 14.733C16.2885 14.7251 16.2107 14.7338 16.1374 14.7584C16.064 14.783 15.9968 14.8231 15.9402 14.8759C15.9346 14.8736 15.8592 14.9377 15.0459 15.9233C14.9992 15.986 14.9349 16.0334 14.8611 16.0594C14.7874 16.0855 14.7076 16.089 14.6319 16.0695C14.5586 16.0498 14.4868 16.025 14.417 15.9953C14.2775 15.9368 14.2291 15.9142 14.1335 15.8737C13.4878 15.592 12.89 15.2113 12.3616 14.7454C12.2199 14.6216 12.0882 14.4866 11.9532 14.3561C11.5106 13.9323 11.1249 13.4528 10.8057 12.9296L10.7394 12.8228C10.6917 12.7509 10.6531 12.6735 10.6246 12.5921C10.5819 12.4268 10.6932 12.294 10.6932 12.294C10.6932 12.294 10.9666 11.9948 11.0937 11.8327C11.2175 11.6753 11.3221 11.5223 11.3896 11.4131C11.5224 11.1994 11.564 10.98 11.4942 10.8101C11.1792 10.0406 10.853 9.2745 10.5177 8.514C10.4514 8.36325 10.2545 8.25525 10.0756 8.23387C10.0149 8.22712 9.95411 8.22038 9.89336 8.21588C9.74228 8.20837 9.59089 8.20987 9.43999 8.22038L9.66611 8.21137L9.66724 8.2125Z" fill="#6951AB"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="header-up__social-item header-mobile__social-item">
+                <a class="header-up__icon" href="https://vk.com/lekmos" aria-label="Ссылка на группу вконтакте">
+                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12.5" cy="12.5" r="12.5" fill="#6951AB"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6051 16.9988H19.3566C19.856 16.9988 20.1069 16.7624 19.9568 16.3009C19.5799 15.5823 19.0816 14.9262 18.4814 14.3597C18.2803 14.1348 18.0319 13.9046 17.8096 13.6987C17.5753 13.4817 17.3704 13.2916 17.2809 13.164C17.0168 12.8446 17.0925 12.7025 17.2809 12.4298C18.2066 11.2383 18.9946 9.95599 19.6315 8.60518C19.7431 8.25056 19.6315 8.00165 19.1069 8.00165H17.3554C17.1913 7.99083 17.0279 8.03135 16.8903 8.11653C16.8375 8.14928 16.7896 8.18813 16.7476 8.23169C16.6799 8.30161 16.627 8.38403 16.5931 8.47449C16.0535 9.69625 15.3288 10.8373 14.4418 11.8615C14.0288 12.2524 13.8548 12.3707 13.6291 12.3707C13.5526 12.3707 13.4533 12.3162 13.3975 12.1703C13.371 12.1012 13.3542 12.0113 13.3542 11.8967V8.60518C13.3542 8.17897 13.2293 8.00165 12.8536 8.00165H10.1021C9.98981 7.99722 9.88009 8.03439 9.79629 8.10516C9.71238 8.17619 9.66112 8.27526 9.65308 8.38125C9.65308 8.53636 9.74563 8.64569 9.86376 8.78499C10.0524 9.00753 10.306 9.30667 10.3518 9.99066V12.4298C10.3518 12.9628 10.2533 13.0571 10.0276 13.0571C9.4394 13.0571 7.98921 10.9977 7.13925 8.62905C6.96282 8.19146 6.80074 8.00165 6.35056 8.00165H4.60024C4.09965 8.00165 4 8.22669 4 8.4756C4.45737 10.4852 5.40359 12.3662 6.76352 13.9687C7.33636 14.8383 8.11919 15.5665 9.04754 16.0936C9.97589 16.6207 11.0232 16.9311 12.1033 16.9999C13.2161 16.9999 13.3542 16.7635 13.3542 16.36V14.8688C13.3542 14.3949 13.4538 14.3006 13.8164 14.3006C14.0793 14.3006 14.5174 14.4188 15.5547 15.3655C15.9101 15.7022 16.1772 15.9835 16.3945 16.2127C16.9039 16.7493 17.1407 16.9988 17.6051 16.9988Z" fill="#F2F5FA"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-up__right-btn">
+          <a class="header-up__tg-btn" href="#" aria-label="Ссылка на чат в Телеграм"></a>
+          <a class="header-up__wa-btn" href="#" aria-label="Ссылка на чат What's app"></a>
+          <a href="tel:+78003331111" class="header-up__phone-btn">
+            <svg class="header-up__contacts-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.9766 11.5703L13.4141 13.9375C13.3438 14.2891 13.0625 14.5234 12.7109 14.5234C6.80469 14.5 2 9.69531 2 3.78906C2 3.4375 2.21094 3.15625 2.5625 3.08594L4.92969 2.52344C5.25781 2.45312 5.60938 2.64062 5.75 2.94531L6.85156 5.5C6.96875 5.80469 6.89844 6.15625 6.64062 6.34375L5.375 7.375C6.17188 8.99219 7.48438 10.3047 9.125 11.1016L10.1562 9.83594C10.3438 9.60156 10.6953 9.50781 11 9.625L13.5547 10.7266C13.8594 10.8906 14.0469 11.2422 13.9766 11.5703Z" fill="white"/>
+            </svg>
+            <span class="header-up__contacts-text">8(800)&nbsp;333&nbsp;1111</span>
+          </a>
+          <button class="red-btn header-up__btn btnsConnect">Связаться с нами</button>
+        </div>
+      </div>
+      <div class="header-middle container">
+        <a href="tel:+78003331111" class="header-middle__phone-btn">
+          <svg class="header-up__contacts-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.9766 11.5703L13.4141 13.9375C13.3438 14.2891 13.0625 14.5234 12.7109 14.5234C6.80469 14.5 2 9.69531 2 3.78906C2 3.4375 2.21094 3.15625 2.5625 3.08594L4.92969 2.52344C5.25781 2.45312 5.60938 2.64062 5.75 2.94531L6.85156 5.5C6.96875 5.80469 6.89844 6.15625 6.64062 6.34375L5.375 7.375C6.17188 8.99219 7.48438 10.3047 9.125 11.1016L10.1562 9.83594C10.3438 9.60156 10.6953 9.50781 11 9.625L13.5547 10.7266C13.8594 10.8906 14.0469 11.2422 13.9766 11.5703Z" fill="white"/>
+          </svg>
+          <span class="header-up__contacts-text">8(800)&nbsp;333&nbsp;1111</span>
+        </a>
+        <ul class="header-middle__social-list">
+          <li class="header-middle__social-item">
+            <a class="header-up__icon" href="#" aria-label="Ссылка на чат в Телеграм">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 3C8.376 3 3 8.376 3 15C3 21.624 8.376 27 15 27C21.624 27 27 21.624 27 15C27 8.376 21.624 3 15 3ZM20.568 11.16C20.388 13.056 19.608 17.664 19.212 19.788C19.044 20.688 18.708 20.988 18.396 21.024C17.7 21.084 17.172 20.568 16.5 20.124C15.444 19.428 14.844 18.996 13.824 18.324C12.636 17.544 13.404 17.112 14.088 16.416C14.268 16.236 17.34 13.44 17.4 13.188C17.4083 13.1498 17.4072 13.1102 17.3968 13.0726C17.3863 13.0349 17.3668 13.0004 17.34 12.972C17.268 12.912 17.172 12.936 17.088 12.948C16.98 12.972 15.3 14.088 12.024 16.296C11.544 16.62 11.112 16.788 10.728 16.776C10.296 16.764 9.48 16.536 8.868 16.332C8.112 16.092 7.524 15.96 7.572 15.54C7.596 15.324 7.896 15.108 8.46 14.88C11.964 13.356 14.292 12.348 15.456 11.868C18.792 10.476 19.476 10.236 19.932 10.236C20.028 10.236 20.256 10.26 20.4 10.38C20.52 10.476 20.556 10.608 20.568 10.704C20.556 10.776 20.58 10.992 20.568 11.16Z" fill="#6951AB"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header-middle__social-item">
+            <a class="header-up__icon header-middle__icon" href="#" aria-label="Ссылка на чат What's app">
+              <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5012 2.25C19.7146 2.25 24.7512 7.28663 24.7512 13.5C24.7512 19.7134 19.7146 24.75 13.5012 24.75C11.5131 24.7532 9.55998 24.2271 7.84249 23.2256L2.25574 24.75L3.77674 19.161C2.77447 17.443 2.24792 15.489 2.25124 13.5C2.25124 7.28663 7.28786 2.25 13.5012 2.25ZM9.66724 8.2125L9.44224 8.2215C9.29657 8.23037 9.15421 8.26864 9.02374 8.334C8.9017 8.40311 8.7903 8.4895 8.69299 8.5905C8.55799 8.71763 8.48149 8.82788 8.39936 8.93475C7.98325 9.47577 7.75921 10.14 7.76261 10.8225C7.76486 11.3737 7.90886 11.9104 8.13386 12.4121C8.59399 13.4269 9.35111 14.5012 10.3501 15.4969C10.5909 15.7365 10.8271 15.9773 11.0814 16.2011C12.3227 17.294 13.8019 18.0822 15.4014 18.5029L16.0404 18.6007C16.2485 18.612 16.4566 18.5963 16.6659 18.5861C16.9935 18.5692 17.3134 18.4805 17.603 18.3263C17.7503 18.2504 17.8941 18.1678 18.0339 18.0787C18.0339 18.0787 18.0822 18.0472 18.1745 17.9775C18.3264 17.865 18.4197 17.7851 18.5457 17.6535C18.6391 17.5568 18.7201 17.4431 18.782 17.3138C18.8697 17.1304 18.9575 16.7805 18.9935 16.4891C19.0205 16.2664 19.0126 16.1449 19.0092 16.0695C19.0047 15.9491 18.9046 15.8243 18.7955 15.7714L18.1407 15.4778C18.1407 15.4778 17.162 15.0514 16.5635 14.7791C16.5009 14.7518 16.4338 14.7361 16.3655 14.733C16.2885 14.7251 16.2107 14.7338 16.1374 14.7584C16.064 14.783 15.9968 14.8231 15.9402 14.8759C15.9346 14.8736 15.8592 14.9377 15.0459 15.9233C14.9992 15.986 14.9349 16.0334 14.8611 16.0594C14.7874 16.0855 14.7076 16.089 14.6319 16.0695C14.5586 16.0498 14.4868 16.025 14.417 15.9953C14.2775 15.9368 14.2291 15.9142 14.1335 15.8737C13.4878 15.592 12.89 15.2113 12.3616 14.7454C12.2199 14.6216 12.0882 14.4866 11.9532 14.3561C11.5106 13.9323 11.1249 13.4528 10.8057 12.9296L10.7394 12.8228C10.6917 12.7509 10.6531 12.6735 10.6246 12.5921C10.5819 12.4268 10.6932 12.294 10.6932 12.294C10.6932 12.294 10.9666 11.9948 11.0937 11.8327C11.2175 11.6753 11.3221 11.5223 11.3896 11.4131C11.5224 11.1994 11.564 10.98 11.4942 10.8101C11.1792 10.0406 10.853 9.2745 10.5177 8.514C10.4514 8.36325 10.2545 8.25525 10.0756 8.23387C10.0149 8.22712 9.95411 8.22038 9.89336 8.21588C9.74228 8.20837 9.59089 8.20987 9.43999 8.22038L9.66611 8.21137L9.66724 8.2125Z" fill="#6951AB"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header-middle__social-item">
+            <a class="header-up__icon" href="https://vk.com/lekmos" aria-label="Ссылка на группу вконтакте">
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12.5" cy="12.5" r="12.5" fill="#6951AB"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6051 16.9988H19.3566C19.856 16.9988 20.1069 16.7624 19.9568 16.3009C19.5799 15.5823 19.0816 14.9262 18.4814 14.3597C18.2803 14.1348 18.0319 13.9046 17.8096 13.6987C17.5753 13.4817 17.3704 13.2916 17.2809 13.164C17.0168 12.8446 17.0925 12.7025 17.2809 12.4298C18.2066 11.2383 18.9946 9.95599 19.6315 8.60518C19.7431 8.25056 19.6315 8.00165 19.1069 8.00165H17.3554C17.1913 7.99083 17.0279 8.03135 16.8903 8.11653C16.8375 8.14928 16.7896 8.18813 16.7476 8.23169C16.6799 8.30161 16.627 8.38403 16.5931 8.47449C16.0535 9.69625 15.3288 10.8373 14.4418 11.8615C14.0288 12.2524 13.8548 12.3707 13.6291 12.3707C13.5526 12.3707 13.4533 12.3162 13.3975 12.1703C13.371 12.1012 13.3542 12.0113 13.3542 11.8967V8.60518C13.3542 8.17897 13.2293 8.00165 12.8536 8.00165H10.1021C9.98981 7.99722 9.88009 8.03439 9.79629 8.10516C9.71238 8.17619 9.66112 8.27526 9.65308 8.38125C9.65308 8.53636 9.74563 8.64569 9.86376 8.78499C10.0524 9.00753 10.306 9.30667 10.3518 9.99066V12.4298C10.3518 12.9628 10.2533 13.0571 10.0276 13.0571C9.4394 13.0571 7.98921 10.9977 7.13925 8.62905C6.96282 8.19146 6.80074 8.00165 6.35056 8.00165H4.60024C4.09965 8.00165 4 8.22669 4 8.4756C4.45737 10.4852 5.40359 12.3662 6.76352 13.9687C7.33636 14.8383 8.11919 15.5665 9.04754 16.0936C9.97589 16.6207 11.0232 16.9311 12.1033 16.9999C13.2161 16.9999 13.3542 16.7635 13.3542 16.36V14.8688C13.3542 14.3949 13.4538 14.3006 13.8164 14.3006C14.0793 14.3006 14.5174 14.4188 15.5547 15.3655C15.9101 15.7022 16.1772 15.9835 16.3945 16.2127C16.9039 16.7493 17.1407 16.9988 17.6051 16.9988Z" fill="#F2F5FA"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="header-down container">
+      <div class="header-down__logo">
+        <img src="img/Logo-header.svg" alt="Логотип">
+      </div>
+      <form action="#" class="header-down__form">
+        <input class="header-down__form-input" type="text" placeholder="Введите название лекарств(а)">
+        <button class="header-down__form-btn red-btn" type="submit">Найти</button> 
+      </form>
+      <div class="modal-overlay" id="modal-dropdown"></div>
+      <div class="header__dropdown-menu">
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Цитраль</span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Цитрамон П</span>
+            <span class="dropdown-menu__count">544 шт от <span class="dropdown-menu__price">17₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Магния цитрат</span>
+            <span class="dropdown-menu__count">16 шт от <span class="dropdown-menu__price">670₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Висмута трикалия дицитрат</span>
+            <span class="dropdown-menu__count">90 шт от <span class="dropdown-menu__price">230₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Цитрамон П</span>
+            <span class="dropdown-menu__count">544 шт от <span class="dropdown-menu__price">17₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Магния цитрат</span>
+            <span class="dropdown-menu__count">16 шт от <span class="dropdown-menu__price">670₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Висмута трикалия дицитрат</span>
+            <span class="dropdown-menu__count">90 шт от <span class="dropdown-menu__price">230₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Цитрамон П</span>
+            <span class="dropdown-menu__count">544 шт от <span class="dropdown-menu__price">17₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Магния цитрат</span>
+            <span class="dropdown-menu__count">16 шт от <span class="dropdown-menu__price">670₽</span></span>
+          </a>
+        </div>
+        <div class="dropdown-menu__item">
+          <a class="dropdown-menu__link" href="#">
+            <span class="dropdown-menu__name">Висмута трикалия дицитрат Висмута трикалия дицитрат Висмута трикалия дицитрат</span>
+            <span class="dropdown-menu__count">90 шт от <span class="dropdown-menu__price">230₽</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section-info">
+      <div class="section-info__heading-wrap">
+        <h1 class="section-info__heading container">Уважаемые владельцы и руководители аптек и аптечных сетей!</h1>
+      </div>
+      <div class="container section-info__container">
+        <div class="section-info__left-card section-info__purple-card">
+          <p class="seation-info__left-text">Фармацевты скучают на рабочем месте, сроки годности препаратов заканчиваются, а расходы бизнеса только растут?</p>
+          <p class="seation-info__left-text">А может, у Вас всё стабильно, но Вам нужен импульс для развития и масштабирования Вашего бизнеса?</p>
+          <p class="seation-info__left-text seation-info__last-text">Мы знаем, как сложно сегодня привлечь новых клиентов и увеличить продажи.</p>
+        </div>   
+        <picture class="section-info__img-wrap">
+          <source class="section-info__img-top section-info__img" srcset="img/sleep_1200.png" media="(max-width: 1200px)">
+          <img class="section-info__img-top section-info__img" src="img/sleep.jpg" alt="Фармацевт">
+        </picture>
+        
+        <div class="section-info__card-wrap">
+          <div class="section-info__left-card section-info__green-card">
+            <p class="seation-info__left-text">Но мы готовы Вам в этом помочь!</p>
+            <p class="seation-info__left-text seation-info__last-text">Мы сделаем всё, чтобы привести в Вашу аптеку много «горячих» клиентов и сделать Ваш бизнес доходным.</p>
+          </div>
+          <div class="section-info__left-card seation-info__left-text seation-info__last-text section-info__white-card">Для этого мы создали уникальную систему, которой нет аналогов на рынке. Мы предлагаем:</div>
+        </div>
+        <picture class="section-info__img-wrap section-info__img-last">
+          <source class="section-info__img" srcset="img/people_1200.png" media="(max-width: 1200px)">
+          <img class="section-info__img" src="img/people.jpg" alt="Очередь">
+        </picture>
+      
+      </div>
+    </section>
+    <section class="section-plus">
+      <div class="container">
+        <ul class="section-plus__list">
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus1.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Размещение вашего прайса на сайте</span>
+              <span class="section-plus__descr">Проинформируем “горячих” клиентов о наличии и ценах в Вашей аптеке</span>
+            </div>
+          </li>
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus2.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Различные рекламные возможности, включая таргетированную рекламу конкретных препаратов</span>
+              <span class="section-plus__descr">Поможем в продвижении аптеки или отдельных предложений</span>
+            </div>
+          </li>
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus3.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Аналитика по рынку</span>
+              <span class="section-plus__descr">Откроем функционал для сравнения цен и наличия, отчетность по кликам и просмотрам, разработаем кастомизированные аналитические продукты и расскажем, как их использовать</span>
+            </div>
+          </li>
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus4.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Личный кабинет аптеки</span>
+              <span class="section-plus__descr">Дадим легко управлять своим прайсом, выбирать рекламу и получать аналитику</span>
+            </div>
+          </li>
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus5.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Форум для профессионалов</span>
+              <span class="section-plus__descr">Предоставим площадку для профессионального общения с другими участниками рынка</span>
+            </div>
+          </li>
+          <li class="section-plus__item">
+            <img class="section-plus__img" src="img/plus6.svg" alt="">
+            <div class="section-plus__text">
+              <span class="section-plus__title">Обратная связь от клиентов</span>
+              <span class="section-plus__descr">Соберем отзывы посетителей, проанализируем, на что обратить внимание</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section-connect">
+      <div class="container">
+        <div class="section-connect__container">
+          <div class="section-connect__content">
+            <h2 class="heading-h2 section-connect__heading">Сделаем вашу аптеку успешной вместе!</h2>
+            <p class="section-connect__descr">Просто зарегистрируйтесь в Личном кабинете для аптек и получите всю необходимую информацию бесплатно. Присоединяйтесь к команде ЛекМос!</p>
+            <button class="section-connect__btn btnsConnect" type="button">Подключиться</button>
+          </div>
+          
+        </div>
+      </div>
+      
+    </section>
+    <section class="section-pharmContacts">
+      <div class="container section-pharmContacts__container">
+        <h3 class="section-pharmContacts__title">Остались вопросы?</h3>
+        <ul class="section-pharmContacts__list">
+          <li class="section-pharmContacts__item">
+            <svg class="section-pharmContacts__contacts-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.2422 2.96875H1.75781C0.790547 2.96875 0 3.75582 0 4.72656V15.2734C0 16.2445 0.791055 17.0312 1.75781 17.0312H18.2422C19.2095 17.0312 20 16.2442 20 15.2734V4.72656C20 3.75559 19.2091 2.96875 18.2422 2.96875ZM17.9723 4.14062C17.4039 4.71082 10.7283 11.4082 10.4541 11.6834C10.225 11.9131 9.77512 11.9133 9.54594 11.6834L2.02773 4.14062H17.9723ZM1.17188 15.058V4.94199L6.21348 10L1.17188 15.058ZM2.02773 15.8594L7.04078 10.83L8.71598 12.5107C9.40246 13.1994 10.5978 13.1991 11.2841 12.5107L12.9593 10.83L17.9723 15.8594H2.02773ZM18.8281 15.058L13.7865 10L18.8281 4.94199V15.058Z" fill="#6951AB"/>
+            </svg>
+            <a class="section-pharmContacts__contacts-link" href="mailto:director@lekmos.ru">director@lekmos.ru</a>
+          </li>
+          <li class="section-pharmContacts__item">
+            <svg class="section-pharmContacts__contacts-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.2422 2.96875H1.75781C0.790547 2.96875 0 3.75582 0 4.72656V15.2734C0 16.2445 0.791055 17.0312 1.75781 17.0312H18.2422C19.2095 17.0312 20 16.2442 20 15.2734V4.72656C20 3.75559 19.2091 2.96875 18.2422 2.96875ZM17.9723 4.14062C17.4039 4.71082 10.7283 11.4082 10.4541 11.6834C10.225 11.9131 9.77512 11.9133 9.54594 11.6834L2.02773 4.14062H17.9723ZM1.17188 15.058V4.94199L6.21348 10L1.17188 15.058ZM2.02773 15.8594L7.04078 10.83L8.71598 12.5107C9.40246 13.1994 10.5978 13.1991 11.2841 12.5107L12.9593 10.83L17.9723 15.8594H2.02773ZM18.8281 15.058L13.7865 10L18.8281 4.94199V15.058Z" fill="#6951AB"/>
+            </svg>
+            <a class="section-pharmContacts__contacts-link" href="mailto:admin@lekmos.ru">admin@lekmos.ru</a>
+          </li>
+          <li class="section-pharmContacts__item">
+            <svg class="section-pharmContacts__contacts-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_576_18646)">
+              <path d="M14.3932 20C10.8871 20 7.14305 18.7117 4.21562 15.7843C1.29309 12.8618 0 9.12016 0 5.60676C0 2.51031 2.50516 0 5.60676 0C5.84637 0 6.0618 0.145859 6.15078 0.36832L8.66121 6.64437C8.78141 6.94484 8.63527 7.28582 8.33484 7.40602L5.57715 8.50906C5.77223 11.6816 8.31887 14.2281 11.4909 14.4229L12.594 11.6652C12.7139 11.3653 13.0548 11.2186 13.3557 11.3388L19.6316 13.8492C19.8541 13.9382 20 14.1536 20 14.3932C20 17.4897 17.4948 20 14.3932 20ZM5.2168 1.18867C2.97273 1.38285 1.17188 3.26465 1.17188 5.60676C1.17188 9.13832 2.54711 12.4585 5.0443 14.9557C7.54145 17.4529 10.8616 18.8281 14.3932 18.8281C16.7346 18.8281 18.617 17.0283 18.8114 14.7832L13.4645 12.6445L12.4268 15.2384C12.3379 15.4609 12.1224 15.6068 11.8828 15.6068C7.75277 15.6068 4.39324 12.2472 4.39324 8.11781C4.39324 7.87824 4.5391 7.66211 4.76156 7.57316L7.35555 6.53555L5.2168 1.18867Z" fill="#6951AB"/>
+              </g>
+              <defs>
+              <clipPath>
+              <rect width="20" height="20" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+            <a class="section-pharmContacts__contacts-link" href="tel:+79911256701">+7&nbsp;(991)125&nbsp;67&nbsp;01</a>
+          </li>
+          <li class="section-pharmContacts__item">
+            <svg class="section-pharmContacts__contacts-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_576_18646)">
+              <path d="M14.3932 20C10.8871 20 7.14305 18.7117 4.21562 15.7843C1.29309 12.8618 0 9.12016 0 5.60676C0 2.51031 2.50516 0 5.60676 0C5.84637 0 6.0618 0.145859 6.15078 0.36832L8.66121 6.64437C8.78141 6.94484 8.63527 7.28582 8.33484 7.40602L5.57715 8.50906C5.77223 11.6816 8.31887 14.2281 11.4909 14.4229L12.594 11.6652C12.7139 11.3653 13.0548 11.2186 13.3557 11.3388L19.6316 13.8492C19.8541 13.9382 20 14.1536 20 14.3932C20 17.4897 17.4948 20 14.3932 20ZM5.2168 1.18867C2.97273 1.38285 1.17188 3.26465 1.17188 5.60676C1.17188 9.13832 2.54711 12.4585 5.0443 14.9557C7.54145 17.4529 10.8616 18.8281 14.3932 18.8281C16.7346 18.8281 18.617 17.0283 18.8114 14.7832L13.4645 12.6445L12.4268 15.2384C12.3379 15.4609 12.1224 15.6068 11.8828 15.6068C7.75277 15.6068 4.39324 12.2472 4.39324 8.11781C4.39324 7.87824 4.5391 7.66211 4.76156 7.57316L7.35555 6.53555L5.2168 1.18867Z" fill="#6951AB"/>
+              </g>
+              <defs>
+              <clipPath>
+              <rect width="20" height="20" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+            <a class="section-pharmContacts__contacts-link" href="tel:+79262440164">+7&nbsp;(926)244&nbsp;01&nbsp;64</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section-analytics">
+      <div class="container">
+        <h2 class="section-analytics__heading heading-h2">Уважаемые производители лекарственных препаратов!</h2>
+        <div class="section-analytics__content">
+          <img class="section-analytics__img" src="img/analytic.jpg" alt="Лекарства">
+          <div class="section-analytics__right">
+            <h3 class="section-analytics__right-heading">Мы знаем все об аптечной рознице и готовы предложить вам уникальные исследования рынка, в том числе:</h3>
+            <ul class="section-analytics__right-list">
+              <li class="section-analytics__right-item">анализ розничных цен на ваши препараты и препараты конкурентов</li>
+              <li class="section-analytics__right-item">анализ спроса на ваши препараты и аналоги</li>
+              <li class="section-analytics__right-item">анализ представленности конкурентов в регионах</li>
+              <li class="section-analytics__right-item">анализ целевой аудитории</li>
+              <li class="section-analytics__right-item">анализ сезонных изменений спроса и многое другое</li>
+            </ul>
+            <p class="section-analytics__right-descr">Наша аналитика - первый шаг к достижению ваших целей.</p>
+            <button class="section-analytics__right-btn green-btn btnsAnalytics">Заказать аналитику</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-advert">
+      <div class="container">
+        <h2 class="section-advert__heading-h2 heading-h2">А может Вы хотите:</h2>
+        <ul class="section-advert__list">
+          <li class="section-advert__item section-advert__item-1">Повысить узнаваемость вашего бренда среди целевой аудитории</li>
+          <li class="section-advert__item section-advert__item-2">Рассказать об акциях и специальных предложениях</li>
+          <li class="section-advert__item section-advert__item-3">Представить свои новинки</li>
+        </ul>
+        <div class="section-connect__container section-advert__container">
+          <div class="section-connect__content section-advert__content">
+            <h2 class="heading-h2 section-advert__heading">Мы предлагаем услуги по размещению рекламы на сайте ЛекМос</h2>
+            <p class="section-connect__descr section-advert__descr section-connect__descr-mb">ее смогут увидеть десятки тысяч ваших потенциальных клиентов, а также наш <a class="section-connect__link" href="http://" target="_blank">медиакит</a> поможет выбрать подходящее именно вам предложение</p>
+            <p class="section-connect__descr section-advert__descr">Предложение также актуально для производителей БАДов, косметики и средств по уходу, компаний, предлагающих различные медицинские услуги.</p>
+            <button class="section-advert__btn btnsAdvert" type="button">Заказать рекламу</button>
+          </div>
+          
+        </div> 
+        
+      </div>
+    </section>
+    <section class="section-partners">
+      <h2 class="section-partners__heading-h2 heading-h2">Наши партнеры:</h2>
+      <div class="swiper section-partners__swiper">
+        <div class="section-partners__navigation">
+          <button class="sw-btn section-partners__btn section-partners__btn-left"></button>
+          <button class="sw-btn section-partners__btn section-partners__btn-right"></button>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide section-partners__slide">
+            <img src="img/partner1.svg" alt="Логотип партнера">
+          </div>
+          <div class="swiper-slide section-partners__slide">
+            <img src="img/partner2.svg" alt="Логотип партнера">
+          </div>
+          <div class="swiper-slide section-partners__slide">
+            <img class="section-partners__slide4" src="img/partner4.png" alt="Логотип партнера">
+          </div>
+          <div class="swiper-slide section-partners__slide">
+            <img class="section-partners__slide4" src="img/partner4.png" alt="Логотип партнера">
+          </div>
+          <div class="swiper-slide section-partners__slide">
+            <img src="img/partner3.svg" alt="Логотип партнера">
+          </div> 
+        </div>
+        <div class="swiper-pagination section-partners__pag"></div>
+      </div>
+    </section>
+    <section class="section-graph">
+      <div class="container section-graph__container">
+        <div class="section-graph__left">
+          <h3 class="section-graph__heading">Рост количества посетителей ЛекМос</h3>
+          <div class="section-graph__wrap-line">
+            <div class="section-graph__block">
+              <span class="section-graph__count">105%</span>
+              <span class="section-graph__color section-graph__color-1"></span>
+              <span class="section-graph__date">июнь 2023</span>
+            </div>
+            <div class="section-graph__block">
+              <span class="section-graph__count">110%</span>
+              <span class="section-graph__color section-graph__color-2"></span>
+              <span class="section-graph__date">июль 2023</span>
+            </div>
+            <div class="section-graph__block">
+              <span class="section-graph__count">115%</span>
+              <span class="section-graph__color section-graph__color-3"></span>
+              <span class="section-graph__date">август 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-graph__right">
+          <h3 class="section-graph__heading">Среднее количество просмотров аптеки в день</h3>
+          <div class="section-graph__wrap-line">
+            <div class="section-graph__block">
+              <span class="section-graph__count">16</span>
+              <span class="section-graph__color section-graph__right-color section-graph__color-1"></span>
+              <span class="section-graph__date">июнь 2023</span>
+            </div>
+            <div class="section-graph__block">
+              <span class="section-graph__count">17</span>
+              <span class="section-graph__color section-graph__right-color section-graph__color-2"></span>
+              <span class="section-graph__date">июль 2023</span>
+            </div>
+            <div class="section-graph__block">
+              <span class="section-graph__count">18</span>
+              <span class="section-graph__color section-graph__right-color section-graph__color-3"></span>
+              <span class="section-graph__date">август 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-up container">
+      <ul class="footer-up__list">
+        <li class="footer-up__item">
+          <h2 class="footer-up__heading">Компания</h2>
+          <nav>
+            <ul class="footer-up__nav-list">
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="index.html">Главная</a></li>
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="catalog.html">Каталог лекарств</a></li>
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="health.html">Справочник болезней</a></li>
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="pharmacies.html">Аптеки</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li class="footer-up__item">
+          <h2 class="footer-up__heading">Правовая информация</h2>
+          <nav>
+            <ul class="footer-up__nav-list">
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="#">Обработка персональных данных</a></li>
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="#">Пользовательское соглашение</a></li>
+              <li class="footer-up__nav-item"><a class="footer-up__nav-link" href="#">Ответственность аптек</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li class="footer-up__item">
+          <h2 class="footer-up__heading">Контакты</h2>
+          <ul class="footer-up__nav-list">
+            <li class="footer-up__nav-item">
+              <a class="footer-up__nav-link footer-up__contact-link" href="tel:+78001010331">
+                <svg class="footer-up__contact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="icon/phone 1" clip-path="url(#clip0_701_9530)">
+                  <path id="Vector" d="M14.3932 20C10.8871 20 7.14305 18.7117 4.21562 15.7843C1.29309 12.8618 0 9.12016 0 5.60676C0 2.51031 2.50516 0 5.60676 0C5.84637 0 6.0618 0.145859 6.15078 0.36832L8.66121 6.64437C8.78141 6.94484 8.63527 7.28582 8.33484 7.40602L5.57715 8.50906C5.77223 11.6816 8.31887 14.2281 11.4909 14.4229L12.594 11.6652C12.7139 11.3653 13.0548 11.2186 13.3557 11.3388L19.6316 13.8492C19.8541 13.9382 20 14.1536 20 14.3932C20 17.4897 17.4948 20 14.3932 20ZM5.2168 1.18867C2.97273 1.38285 1.17188 3.26465 1.17188 5.60676C1.17188 9.13832 2.54711 12.4585 5.0443 14.9557C7.54145 17.4529 10.8616 18.8281 14.3932 18.8281C16.7346 18.8281 18.617 17.0283 18.8114 14.7832L13.4645 12.6445L12.4268 15.2384C12.3379 15.4609 12.1224 15.6068 11.8828 15.6068C7.75277 15.6068 4.39324 12.2472 4.39324 8.11781C4.39324 7.87824 4.5391 7.66211 4.76156 7.57316L7.35555 6.53555L5.2168 1.18867Z" fill="#6D7685"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_701_9530">
+                  <rect width="20" height="20" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+                8&nbsp;(800)&nbsp;101-03-31
+              </a>
+            </li>
+            <li class="footer-up__nav-item">
+              <a class="footer-up__nav-link footer-up__contact-link" href="mailto:director@lekmos.ru">
+                <svg class="footer-up__contact-icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Group">
+                  <g id="Group_2">
+                  <path id="Vector" d="M18.2422 0.96875H1.75781C0.790547 0.96875 0 1.75582 0 2.72656V13.2734C0 14.2445 0.791055 15.0312 1.75781 15.0312H18.2422C19.2095 15.0312 20 14.2442 20 13.2734V2.72656C20 1.75559 19.2091 0.96875 18.2422 0.96875ZM17.9723 2.14062C17.4039 2.71082 10.7283 9.4082 10.4541 9.68336C10.225 9.91313 9.77512 9.91328 9.54594 9.68336L2.02773 2.14062H17.9723ZM1.17188 13.058V2.94199L6.21348 8L1.17188 13.058ZM2.02773 13.8594L7.04078 8.83L8.71598 10.5107C9.40246 11.1994 10.5978 11.1991 11.2841 10.5107L12.9593 8.83004L17.9723 13.8594H2.02773ZM18.8281 13.058L13.7865 8L18.8281 2.94199V13.058Z" fill="#6D7685"/>
+                  </g>
+                  </g>
+                </svg>
+                director@lekmos.ru
+              </a>
+            </li>
+            <li class="footer-up__nav-item">
+              <a href="for_pharmacies.html" class="footer-up__nav-btn green-btn">Подключить аптеку</a>
+            </li>
+          </ul>
+        </li>
+        <li class="footer-up__item footer-up__item-last">
+          <h2 class="footer-up__heading">Мы в соцсетях</h2>
+          <ul class="footer-up__icon-list">
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-tg" href="#" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-vk" href="https://vk.com/lekmos" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-ok" href="https://ok.ru/group/70000004352516" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-dz" href="https://dzen.ru/lekmos" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-ins" href="#" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-yo" href="#" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-tt" href="https://www.tiktok.com/@lekmosru" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-fb" href="#" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-x" href="https://twitter.com/lekmosru" target="_blank"></a></li>
+            <li class="footer-up__icon-item"><a class="footer-up__icon footer-up__icon-in" href="#" target="_blank"></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-down container">
+      <a href="index.html"><img class="footer-logo" src="img/logo-footer.svg" alt="Логотип"></a>
+      <ul class="footer-down__logo-list">
+        <li class="footer-down__logo-item">
+          <picture class="footer-down__logo-img">
+            <source srcset="img/footer_logo1.svg" media="(max-width: 700px)">
+            <img class="footer-down__logo-mob" src="img/logo2-1.png" alt="Логотип роспотребнадзора">
+          </picture>
+          <a class="footer-down__logo-link" href="https://www.rospotrebnadzor.ru/">Роспотребнадзор</a>
+        </li>
+        <li class="footer-down__logo-item">
+          <picture class="footer-down__logo-img">
+            <source srcset="img/footer_logo2.svg" media="(max-width: 700px)">
+            <img class="footer-down__logo-mob" src="img/logo2-2.png" alt="Логотип министерства здравоохранения">
+          </picture>
+          <a class="footer-down__logo-link" href="https://minzdrav.gov.ru/">Министерство <br>здравоохранения</a>
+        </li>
+      </ul>
+    </div>
+    <div id="overlay">
+      <div class="popup">
+        <p class="cookie-text">Продолжая пользоваться сайтом, вы соглашаетесь на использование <a class="cookie-link" href="#" target="_blank">cookie</a></p>
+        <button id="popupClose" class="cookie-btn" onclick="document.getElementById('overlay').style.display='none';">Принять</button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
